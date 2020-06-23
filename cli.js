@@ -37,7 +37,7 @@ const updateTemplateFiles = () => {
         '.travis.yml': (path) => {
             fs.unlinkSync(path)
         },
-        'REAMDE.md': (path) => {
+        'README.md': (path) => {
             fs.unlinkSync(path)
         },
     }
