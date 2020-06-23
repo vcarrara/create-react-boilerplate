@@ -1,0 +1,20 @@
+{
+  "name": "create-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Node.js cli for creating a react-boilerplate",
+  "bin": "cli.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcarrara/create-react-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "vcarrara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcarrara/create-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vcarrara/create-react-boilerplate#readme",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  }
+}
