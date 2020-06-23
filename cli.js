@@ -18,8 +18,8 @@ const run = () => {
     shell.exec(`git clone ${repo} .`)
     shell.exec('git init')
     updateTemplateFiles()
-    // shell.echo('Installing dependencies...')
-    // shell.exec('npm install')
+    shell.echo('Installing dependencies...')
+    shell.exec('npm install')
     shell.echo('React boileplate successfully created!')
 }
 
