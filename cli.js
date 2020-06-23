@@ -8,10 +8,16 @@ const argv = process.argv.slice(2)
 const dir = argv[0] || 'react-boilerplate'
 
 const run = () => {
+    if (!shell.which('git')) {
+        shell.echo('Error, this script requires git')
+        shell.exit(1)
+    }
+
     shell.mkdir(dir)
     shell.cd(dir)
     shell.exec(`git clone ${repo} .`)
     updateTemplateFiles()
+    shell.echo('Installing dependencies...')
     shell.exec('npm install')
 }
 
@@ -31,9 +37,6 @@ const updateTemplateFiles = () => {
         },
         'REAMDE.md': (path) => {
             fs.unlinkSync(path)
-        },
-        '.git': (path) => {
-            fs.rmdirSync(path)
         },
     }
     Object.keys(files).forEach((fileName) => {
