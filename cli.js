@@ -16,6 +16,7 @@ const run = () => {
     shell.mkdir(dir)
     shell.cd(dir)
     shell.exec(`git clone ${repo} .`)
+    shell.exec('git init')
     updateTemplateFiles()
     shell.echo('Installing dependencies...')
     shell.exec('npm install')
