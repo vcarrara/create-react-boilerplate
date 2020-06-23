@@ -20,6 +20,7 @@ const run = () => {
     updateTemplateFiles()
     shell.echo('Installing dependencies...')
     shell.exec('npm install')
+    shell.echo('React boileplate successfully created!')
 }
 
 const updateTemplateFiles = () => {
