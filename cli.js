@@ -18,8 +18,8 @@ const run = () => {
     shell.exec(`git clone ${repo} .`)
     shell.exec('git init')
     updateTemplateFiles()
-    shell.echo('Installing dependencies...')
-    shell.exec('npm install')
+    // shell.echo('Installing dependencies...')
+    // shell.exec('npm install')
     shell.echo('React boileplate successfully created!')
 }
 
@@ -33,6 +33,13 @@ const updateTemplateFiles = () => {
             delete package.bugs
             delete package.homepage
             fs.writeFileSync(path, JSON.stringify(package))
+        },
+        'webpack.config.js': (path) => {
+            if (dir !== 'react-boilerplate') {
+                let config = fs.readFileSync(path, 'utf-8')
+                config = config.replace('react-boilerplate', dir)
+                fs.writeFileSync(path, config)
+            }
         },
         '.travis.yml': (path) => {
             fs.unlinkSync(path)
