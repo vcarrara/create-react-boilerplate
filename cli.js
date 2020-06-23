@@ -32,6 +32,9 @@ const updateTemplateFiles = () => {
         'REAMDE.md': (path) => {
             fs.unlinkSync(path)
         },
+        '.git': (path) => {
+            fs.rmdirSync(path)
+        },
     }
     Object.keys(files).forEach((fileName) => {
         const filePath = join(shell.pwd().stdout, fileName)
